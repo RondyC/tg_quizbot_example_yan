@@ -1,0 +1,26 @@
+CREATE TABLE `quiz_questions` (
+    question_id Uint64,
+    question_text Utf8,
+    options Utf8,
+    correct_option_index Uint64,
+    PRIMARY KEY(question_id)
+)
+
+REPLACE INTO `quiz_questions` (question_id, question_text, options, correct_option_index) VALUES
+(0u, "Что такое Python?", '["Язык программирования", "Тип данных", "Музыкальный инструмент", "Змея на английском"]', 0u),
+(1u, "Какой тип данных используется для хранения целых чисел?", '["int", "float", "str", "natural"]', 0u),
+(2u, "Что такое ООП?", '["Объектно-ориентированное программирование", "Оптимизация операций", "Операционная система", "Объект оперативной памяти"]', 0u),
+(3u, "Как называется встроенная функция для сортировки списка?", '["sorted()", "sort()", "order()", "arrange()"]', 0u),
+(4u, "Что из этого является фреймворком для Python?", '["Django", "Node.js", "Ruby on Rails", "Spring"]', 0u),
+(5u, "Что делает оператор \"is\" в Python?", '["Сравнивает идентичность объектов", "Присваивает значения", "Удаляет объект", "Создает копию объекта"]', 0u),
+(6u, "Какой командой можно вывести сообщение в консоль?", '["print()", "write()", "echo()", "display()"]', 0u),
+(7u, "Какую структуру данных использует dict?", '["Хеш-таблица", "Список", "Очередь", "Стек"]', 0u),
+(8u, "Какой тип данных в Python является неизменяемым?", '["tuple", "list", "dict", "set"]', 0u),
+(9u, "Как создать виртуальное окружение в Python?", '["python -m venv", "pip install venv", "python venv", "venv create"]', 0u)
+
+CREATE TABLE `quiz_state` (
+    user_id Uint64,
+    question_index Uint64,
+    score Uint64,
+    PRIMARY KEY(user_id)
+)
